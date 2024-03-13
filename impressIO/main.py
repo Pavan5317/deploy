@@ -144,7 +144,7 @@ def check_client_sockets():
 check_client_thread = threading.Thread(target=check_client_sockets)
 check_client_thread.daemon = True  
 check_client_thread.start()
-server_thread = threading.Thread(target=start_server, args=('192.168.25.112', 2000))
+server_thread = threading.Thread(target=start_server, args=('192.168.25.112', 2020))
 server_thread.start()
 signal.signal(signal.SIGINT, signal_handler)
 
