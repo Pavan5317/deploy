@@ -13,13 +13,13 @@ import uvicorn
 
 app = FastAPI()
 
-#app.add_middleware(
-#    CORSMiddleware,
-#    allow_origins=["http://localhost:3000"],  # Update this with your frontend URL
-#    allow_credentials=True,
-#    allow_methods=["GET", "POST"],
-#    allow_headers=["*"],
-#)
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["http://localhost:3000"],  # Update this with your frontend URL
+    allow_credentials=True,
+    allow_methods=["GET", "POST"],
+    allow_headers=["*"],
+)
 
 class request_details(BaseModel):
     device_ip: str
@@ -144,7 +144,7 @@ def check_client_sockets():
 check_client_thread = threading.Thread(target=check_client_sockets)
 check_client_thread.daemon = True  
 check_client_thread.start()
-server_thread = threading.Thread(target=start_server, args=('0.0.0.0', 10000))
+server_thread = threading.Thread(target=start_server, args=('192.168.25.112', 2000))
 server_thread.start()
 signal.signal(signal.SIGINT, signal_handler)
 
