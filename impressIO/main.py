@@ -13,13 +13,13 @@ import uvicorn
 
 app = FastAPI()
 
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=["http://localhost:3000"],  # Update this with your frontend URL
-    allow_credentials=True,
-    allow_methods=["GET", "POST"],
-    allow_headers=["*"],
-)
+#app.add_middleware(
+#    CORSMiddleware,
+#    allow_origins=["http://localhost:3000"],  # Update this with your frontend URL
+#    allow_credentials=True,
+#    allow_methods=["GET", "POST"],
+#    allow_headers=["*"],
+#)
 
 class request_details(BaseModel):
     device_ip: str
